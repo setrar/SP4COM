@@ -25,20 +25,20 @@ Where $p$ is the probability of bit inversion, $x$ is the transmitted bit, and $
 
 ### 2. **Fading Channels**
 - **Flat Fading:** $y(t) = h(t) \cdot x(t) + n(t)$
-- **Frequency-selective Fading:** \(y(t) = h(t) * x(t) + n(t)\)
-Where \(y(t)\) is the received signal, \(x(t)\) is the transmitted signal, \(h(t)\) represents the channel's fading effect (coefficient or impulse response), \(n(t)\) is the noise, and \(*\) denotes convolution.
+- **Frequency-selective Fading:** $y(t) = h(t) * x(t) + n(t)$
+Where $y(t)$ is the received signal, $x(t)$ is the transmitted signal, $h(t)$ represents the channel's fading effect (coefficient or impulse response), $n(t)$ is the noise, and $*$ denotes convolution.
 
 ### 3. **Gaussian Noise Channels (Additive White Gaussian Noise, AWGN)**
-$ y = x + n $
-Where \(y\) is the received signal, \(x\) is the transmitted signal, and \(n\) is Gaussian noise with \(n \sim \mathcal{N}(0, \sigma^2)\).
+$y = x + n$
+Where $y$ is the received signal, $x$ is the transmitted signal, and $n$ is Gaussian noise with $n \sim \mathcal{N}(0, \sigma^2)$.
 
 ### 4. **Rayleigh and Rician Channels**
-- **Rayleigh Fading:** \(|h| = \sqrt{X^2 + Y^2}\)
-- **Rician Fading:** \(|h| = \sqrt{(X+s)^2 + Y^2}\)
-Where \(|h|\) is the magnitude of the fading coefficient, \(X\) and \(Y\) are independent Gaussian random variables with zero mean and equal variance for Rayleigh fading, and \(s\) is the direct path (line-of-sight) component for Rician fading.
+- **Rayleigh Fading:** $|h| = \sqrt{X^2 + Y^2}$
+- **Rician Fading:** $|h| = \sqrt{(X+s)^2 + Y^2}$
+Where $|h|$ is the magnitude of the fading coefficient, $X$ and $Y$ are independent Gaussian random variables with zero mean and equal variance for Rayleigh fading, and $s$ is the direct path (line-of-sight) component for Rician fading.
 
 ### 5. **Interference Channels**
-$ y = x + n + I $
+$y = x + n + I$
 Where \(y\) is the received signal, \(x\) is the transmitted signal, \(n\) is noise, and \(I\) represents the interference.
 
 These equations provide a fundamental understanding of how different channel layers affect the transmission of signals in communication systems, offering insights into the challenges and considerations for system design and optimization.
