@@ -13,14 +13,14 @@ In the context of real numbers, orthogonal matrices play a similar role to unita
 To present the concepts in a more compact and concise form, here are the key equations associated with each type of channel layer mentioned:
 
 ### 1. **Memoryless Channels (Binary Symmetric Channel, BSC)**
-$ P(y|x) = \begin{cases} 
+$P(y|x) = \begin{cases} 
 1 - p & \text{if } y = x \\
 p & \text{if } y \neq x
-\end{cases} $
-Where \(p\) is the probability of bit inversion, \(x\) is the transmitted bit, and \(y\) is the received bit.
+\end{cases}$
+Where $p$ is the probability of bit inversion, $x$ is the transmitted bit, and $y$ is the received bit.
 
 ### 2. **Fading Channels**
-- **Flat Fading:** \(y(t) = h(t) \cdot x(t) + n(t)\)
+- **Flat Fading:** $y(t) = h(t) \cdot x(t) + n(t)$
 - **Frequency-selective Fading:** \(y(t) = h(t) * x(t) + n(t)\)
 Where \(y(t)\) is the received signal, \(x(t)\) is the transmitted signal, \(h(t)\) represents the channel's fading effect (coefficient or impulse response), \(n(t)\) is the noise, and \(*\) denotes convolution.
 
