@@ -43,7 +43,7 @@ Where \(y\) is the received signal, \(x\) is the transmitted signal, \(n\) is no
 
 These equations provide a fundamental understanding of how different channel layers affect the transmission of signals in communication systems, offering insights into the challenges and considerations for system design and optimization.
 
-### Linear Combining Receivers \hat{a}[k] = fy[k] , f : 1 x m
+### Linear Combining Receivers $\hat{a}[k] = fy[k] , f : 1 x m$
 
 Linear combining in the context of signal processing or communication systems is a technique used to improve the reception of transmitted signals by combining multiple received signals into a single signal. The aim is to enhance the signal quality, reduce the effect of noise, and mitigate interference. This is particularly useful in systems with multiple antennas or in environments with multipath propagation.
 
