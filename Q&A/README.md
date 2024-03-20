@@ -69,6 +69,6 @@ Given your notation, \(\hat{a}[k] = f\mathbf{y}[k]\), it seems you are describin
 
 If \(\mathbf{y}[k] = [y_1[k], y_2[k], ..., y_m[k]]^T\) and \(f = [f_1, f_2, ..., f_m]\), then the estimated transmitted signal is given by:
 
-\[\hat{a}[k] = f\mathbf{y}[k] = f_1y_1[k] + f_2y_2[k] + \dots + f_my_m[k]\]
+$\hat{a}[k] = f\mathbf{y}[k] = f_1y_1[k] + f_2y_2[k] + \dots + f_my_m[k]$
 
 This formulation demonstrates how the received signal components are weighted and combined to form an estimate of the original transmitted signal, aiming to improve reception quality through signal processing techniques.
