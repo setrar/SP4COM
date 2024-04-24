@@ -1,6 +1,8 @@
 # HW1
 
-# References
+The report for `HW1` can be found by following the Jupyter Notebook &#x1F449; [`REPORT`](REPORT.ipynb).
+
+# &#x1F4DA; References
 
 - [ ] [VLMS: Introduction to Applied Linear Algebra – Vectors, Matrices, and Least Squares](https://web.stanford.edu/~boyd/vmls/)
 - [ ] [VLMS: Stanford ENGR108: Introduction to Applied Linear Algebra —Vectors, ...](https://www.youtube.com/playlist?list=PLoROMvodv4rMz-WbFQtNUsUElIh2cPmN9)
