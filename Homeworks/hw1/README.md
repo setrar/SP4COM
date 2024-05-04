@@ -14,3 +14,4 @@ The report for `HW1` can be found by following the Jupyter Notebook &#x1F449; [`
 - [ ] [Sionna Github](https://github.com/NVlabs/sionna/tree/main)
 - [ ] [Introduction to Multiple Antenna Communications and Reconfigurable Surfaces](https://www.youtube.com/watch?v=44pT2Nui3_Q)
 - [ ] [Course on Multiple Antenna Communications (2021)](https://www.youtube.com/playlist?list=PLTv48TzNRhaJ66mW48MI_HBBawupV_ZR_)
+- [ ] [Adaptive Signal Processing: RLD Academy](https://www.youtube.com/playlist?list=PLqaCBRYJhA4YOp4ggJVD5nrYpaO5lFXk8)
