@@ -1,11 +1,11 @@
-struct InputLMS
+struct LeastMeanSquare
     x    #   x     - Input array x[n]
     d    #   d     - Desired array d[n], length must be same as x
     Δ    #   Δ     - Step size
     N    #   N     - Length of the FIR filter    
 end
 
-function lms(LMS::InputLMS)
+function solve(LMS::LeastMeanSquare)
     # LMS Algorithm for Coefficient Adjustment
     # ----------------------------------------
     # Inputs:
