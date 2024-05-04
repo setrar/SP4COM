@@ -1,14 +1,20 @@
-function lms(x, d, Δ, N)
+struct InputLMS
+    x    #   x     - Input array x[n]
+    d    #   d     - Desired array d[n], length must be same as x
+    Δ    #   Δ     - Step size
+    N    #   N     - Length of the FIR filter    
+end
+
+function lms(LMS::InputLMS)
     # LMS Algorithm for Coefficient Adjustment
     # ----------------------------------------
     # Inputs:
-    #   x     - Input array x[n]
-    #   d     - Desired array d[n], length must be same as x
-    #   Δ     - Step size
-    #   N     - Length of the FIR filter
+    #   LMS   - Input Structure LMS
     # Outputs:
     #   h     - Estimated FIR filter coefficients
     #   y     - Output array y[n]
+
+    x, d, Δ, N = LMS.x, LMS.d, LMS.Δ, LMS.N
     
     M = length(x)
     y = zeros(Float64, M)
