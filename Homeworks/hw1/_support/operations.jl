@@ -22,6 +22,11 @@ struct Hermitianer end
 const ꜛ = Hermitianer() #typed \^uparrow
 Base.:(*)(x, ::Hermitianer) = conj(transpose(x))
 
+# Hermitian postfix operation
+struct Adjointer end
+const ᴴ = Adjointer() #typed \^H
+Base.:(*)(x, ::Adjointer) = adjoint(x)
+
 # Convolution infix function
 function ⊗(a, b) 
     return conv(a,b)

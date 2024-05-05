@@ -1,5 +1,5 @@
-using AdaptiveFilters, Plots, Interact
-inspectdr() # Preferred plotting backend for waveforms
+using AdaptiveFilters, Plots, Interact, Statistics
+# inspectdr() # Preferred plotting backend for waveforms
 
 y = [sin.(1:100); sin.(0.2 .*(1:100))] # A sinusoid with changing frequency
 yn = y .+ 0.1*randn(length(y)) # A sinusoid with noise
