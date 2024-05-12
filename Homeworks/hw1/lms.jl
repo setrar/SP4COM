@@ -21,7 +21,8 @@ function solve(LMS::LeastMeanSquare)
     h = zeros(Float64, N)
     
     for n in N:M
-        x₁ = x[n:-1:n-N+1]        # Reverse the slice to mimic MATLAB's order
+        x₁ = reverse(x[n-N+1:n])
+        # x₁ = x[n:-1:n-N+1]        # Reverse the slice to mimic MATLAB's order
         y[n] = (h)ᵀ * x₁  # Calculate the output using dot product
         ϵ = d[n] - y[n]           # Error calculation
         h += Δ * ϵ * x₁           # Update the filter coefficients
