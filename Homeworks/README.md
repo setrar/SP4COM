@@ -3,12 +3,12 @@
 | Homeworks | Reports |
 |-|-|
 | [:one:](hw1) | |
-|            | [hw1](1/REPORT.ipynb)        |
+|            | [hw1](hw1/REPORT.ipynb)        |
 | [:two:](hw2) | |
-|            | [hw2](1/REPORT.ipynb)        |
+|            | [hw2](hw2/REPORT.ipynb)        |
 | TP | Reports |
 |-|-|
 | [:one:](tp1) | |
-|            | [tp1](1/REPORT.ipynb)        |
+|            | [tp1](tp1/REPORT.ipynb)        |
 
 # References
