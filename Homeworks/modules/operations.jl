@@ -50,3 +50,5 @@ argmax = findmax # Alias used for MLE search
 
 |  = abs
 |₂ = norm
+
+j = √Complex(-1)

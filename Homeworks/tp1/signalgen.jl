@@ -1,6 +1,26 @@
-using LinearAlgebra, Random, Printf
+struct Signal
+    m::Int         # Number of antennas
+    M::Int         # Number of samples
+    θ::Float64     # DOA of the desired signal (in radians)
+    φ::Float64     # DOA of the interferer (in radians)
+    SIR::Float64   # Signal-to-Interference Ratio (in dB)
+    SNR::Float64   # Signal-to-Noise Ratio (in dB)
 
-function signalgen(m, M, θ, φ, SIR, SNR)
+    # Inner constructor to allow keyword arguments
+    function Signal(; m, M, θ, φ, SIR, SNR)
+        new(m, M, θ, φ, SIR, SNR)
+    end
+end
+
+function generate(params::Signal)
+    # Extract parameters from the struct
+    m = params.m
+    M = params.M
+    θ = params.θ
+    φ = params.φ
+    SIR = params.SIR
+    SNR = params.SNR
+
     # Constants
     σₐ² = 1.0 # Power of the desired signal
     σₐ = sqrt(σₐ²) # Standard deviation of the desired signal
@@ -14,24 +34,24 @@ function signalgen(m, M, θ, φ, SIR, SNR)
     # Generate QPSK symbols for the desired signal
     aᵣ = (rand(1:2, M) .- 1.5) * 2 * σₐ / sqrt(2)
     aᵢ = (rand(1:2, M) .- 1.5) * 2 * σₐ / sqrt(2)
-    a₀ = aᵣ .+ 1im * aᵢ
+    a₀ = aᵣ .+ im * aᵢ
 
     # Generate QPSK symbols for the interferer signal
     bᵣ = (rand(1:2, M) .- 1.5) * 2 * σᵦ / sqrt(2)
     bᵢ = (rand(1:2, M) .- 1.5) * 2 * σᵦ / sqrt(2)
-    bᵩ = bᵣ .+ 1im * bᵢ
+    bᵩ = bᵣ .+ im * bᵢ
 
     # Generate the array response vectors
     d = 0.5 # Spacing between antennas (normalized to wavelength)
-    h = exp.(1im * 2 * π * d * (0:m-1) .* sin(θ)) # Array response for desired signal
-    g = exp.(1im * (2 * π * d * (0:m-1) .* sin(φ) .+ π / 4)) # Array response for interferer
+    h = exp.(im * 2 * π * d * (0:m-1) .* sin(θ)) # Array response for desired signal
+    g = exp.(im * (2 * π * d * (0:m-1) .* sin(φ) .+ π / 4)) # Array response for interferer
 
     # Generate noise
     uᵣ = randn(m, M) * sqrt(σᵤ² / 2)
     uᵢ = randn(m, M) * sqrt(σᵤ² / 2)
-    u = uᵣ .+ 1im .* uᵢ
+    u = uᵣ .+ im .* uᵢ
 
-    # Reshape a and β to 1 x M for matrix multiplication
+    # Reshape a₀ and bᵩ to 1 x M for matrix multiplication
     a₀ = reshape(a₀, 1, M)
     bᵩ = reshape(bᵩ, 1, M)
 
@@ -44,4 +64,3 @@ function signalgen(m, M, θ, φ, SIR, SNR)
 
     return y, a₀, h
 end
-
