@@ -22,11 +22,6 @@ struct Hermitianer end
 const ꜛ = Hermitianer() #typed \^uparrow
 Base.:(*)(x, ::Hermitianer) = conj(transpose(x))
 
-# Hermitian postfix operation
-struct Adjointer end
-const ᴴ = Adjointer() #typed \^H
-Base.:(*)(x, ::Adjointer) = adjoint(x)
-
 # Convolution infix function
 function ⊗(a, b) 
     return conv(a,b)
@@ -45,10 +40,10 @@ end
 𝓕⁻¹ = ifft # Inverse Fourier Transform types \bscrF\^-\^1
 argmax = findmax # Alias used for MLE search 
 
-𝓡𝓮 = real # Real Part Function to extract real number from Complex Number
-𝓘𝓶 = imag # Imaginary Part Function to extract imaginary part from Complex Number
+ℜ = real # Real Part Function to extract real number from Complex Number \frakR
+ℑ = imag # Imaginary Part Function to extract imaginary part from Complex Number \frakI
+
+j = √Complex(-1)
 
 |  = abs
 |₂ = norm
-
-j = √Complex(-1)
