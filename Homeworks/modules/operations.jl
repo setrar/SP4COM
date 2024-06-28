@@ -19,7 +19,7 @@ Base.:(*)(x, ::Conjugater) = conj.(x)
 
 # Hermitian postfix operation
 struct Hermitianer end
-const ꜛ = Hermitianer() #typed \^uparrow
+const ᴴ = Hermitianer() #typed \^uparrow
 Base.:(*)(x, ::Hermitianer) = conj(transpose(x))
 
 # Convolution infix function
