@@ -23,33 +23,33 @@ function generate(params::Signal)
 
     # Constants
     σₐ² = 1.0 # Power of the desired signal
-    σₐ = sqrt(σₐ²) # Standard deviation of the desired signal
+    σₐ = √(σₐ²) # Standard deviation of the desired signal
 
     # Calculate the power of the interferer and noise
     σᵦ² = σₐ² / 10^(SIR / 10) # Power of the interferer
-    σᵦ = sqrt(σᵦ²) # Standard deviation of the interferer
+    σᵦ = √(σᵦ²) # Standard deviation of the interferer
     σᵤ² = σₐ² / 10^(SNR / 10) # Power of the noise per antenna
-    σᵤ = sqrt(σᵤ²) # Standard deviation of the noise per antenna
+    σᵤ = √(σᵤ²) # Standard deviation of the noise per antenna
 
     # Generate QPSK symbols for the desired signal
-    aᵣ = (rand(1:2, M) .- 1.5) * 2 * σₐ / sqrt(2)
-    aᵢ = (rand(1:2, M) .- 1.5) * 2 * σₐ / sqrt(2)
-    a₀ = aᵣ .+ im * aᵢ
+    aᵣ = (rand(1:2, M) .- 1.5) * 2 * σₐ / √(2)
+    aᵢ = (rand(1:2, M) .- 1.5) * 2 * σₐ / √(2)
+    a₀ = aᵣ .+ j * aᵢ
 
     # Generate QPSK symbols for the interferer signal
-    bᵣ = (rand(1:2, M) .- 1.5) * 2 * σᵦ / sqrt(2)
-    bᵢ = (rand(1:2, M) .- 1.5) * 2 * σᵦ / sqrt(2)
-    bᵩ = bᵣ .+ im * bᵢ
+    bᵣ = (rand(1:2, M) .- 1.5) * 2 * σᵦ / √(2)
+    bᵢ = (rand(1:2, M) .- 1.5) * 2 * σᵦ / √(2)
+    bᵩ = bᵣ .+ j * bᵢ
 
     # Generate the array response vectors
     d = 0.5 # Spacing between antennas (normalized to wavelength)
-    h = exp.(im * 2 * π * d * (0:m-1) .* sin(θ)) # Array response for desired signal
-    g = exp.(im * (2 * π * d * (0:m-1) .* sin(φ) .+ π / 4)) # Array response for interferer
+    h = exp.(j * 2π * d * (0:m-1) .* sin(θ)) # Array response for desired signal
+    g = exp.(j * (2π * d * (0:m-1) .* sin(φ) .+ π/4)) # Array response for interferer
 
     # Generate noise
-    uᵣ = randn(m, M) * sqrt(σᵤ² / 2)
-    uᵢ = randn(m, M) * sqrt(σᵤ² / 2)
-    u = uᵣ .+ im .* uᵢ
+    uᵣ = randn(m, M) * √(σᵤ²/2)
+    uᵢ = randn(m, M) * √(σᵤ²/2)
+    u = uᵣ .+ j .* uᵢ
 
     # Reshape a₀ and bᵩ to 1 x M for matrix multiplication
     a₀ = reshape(a₀, 1, M)
