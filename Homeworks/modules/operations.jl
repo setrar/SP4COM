@@ -15,7 +15,7 @@ Base.:(*)(x, ::Inverser) = inv(x)
 # Conjugater postfix operation
 struct Conjugater end
 const ˣ = Conjugater() #typed \^x
-Base.:(*)(x, ::Conjugater) = conj.(x)
+Base.:(*)(x, ::Conjugater) = conj(x)
 
 # Hermitian postfix operation
 struct Hermitianer end
