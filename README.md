@@ -59,3 +59,7 @@ Here’s a condensed explanation of each point:
 8. **Uplink/Downlink AWGN & Fading Channels**: Uplink refers to transmission from devices to the base station; downlink is from the base station to devices. AWGN and fading conditions affect both differently.
 
 9. **Multiuser Diversity & Multi-Node Networks**: Multiuser diversity exploits independent fading across users to improve network performance. Multi-node networks involve multiple transmitting and receiving points working together to enhance communication.
+
+# Books
+
+- [ ] [Fundamentals of Wireless Communication](https://web.stanford.edu/~dntse/papers/book121004.pdf)
