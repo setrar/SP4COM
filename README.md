@@ -28,7 +28,7 @@ In summary, synchronization ensures that the receiver correctly aligns with the 
 
 # References
 
-MobCom: Compare to [MobCom](https://www.eurecom.fr/en/course/mobcom-2024fall) and explain the below points in a condensed manner
+[MobCom](https://www.eurecom.fr/en/course/mobcom-2024fall): Compare to MobCom and explain the below points in a condensed manner
 - Physical channel modelling, input/output channel models,
 - Time and frequency channel coherence
 - Statistical channel modelling.
